@@ -1,0 +1,120 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+h2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+}
+input,
+button {
+  font-family: "Roboto", sans-serif;
+  border: solid black 1px;
+  border-radius: 4px;
+}
+.header {
+  height: 68px;
+  background: #fff159;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-form {
+  margin: 0 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 44px;
+}
+.search-form input {
+  width: 100%;
+  max-width: 375px;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.search-form button {
+  margin-left: 12px;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 13px 35px;
+}
+.section-of-products {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 20px;
+}
+@media (min-width: 600px) {
+  .section-of-products {
+    margin: 0;
+  }
+}
+.section-of-products-container .results {
+  font-weight: 400;
+}
+.product-link {
+  text-decoration: none;
+  color: black;
+}
+.product-container {
+  padding: 6px;
+  border: solid 1px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.product-container:hover {
+  opacity: 0.8;
+}
+@media (min-width: 600px) {
+  .product-container {
+    width: 510px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.product-container img {
+  width: 128px;
+  height: 11 9px;
+}
+.product-container .info-of-product-container {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 600px) {
+  .product-container .info-of-product-container {
+    flex-direction: row;
+  }
+}
+.name-and-more-info-container {
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 600px) {
+  .name-and-more-info-container {
+    padding-left: 10px;
+  }
+}
+.name-and-more-info-container h2 {
+  margin: 0;
+}
+.name-and-more-info-container .product-sold-quantity {
+  margin-top: 40px;
+}
+.name-and-more-info-container span {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+.product-container .price-of-product-container h2 {
+  margin: 0;
+  padding: 13px 15px 0 0;
+  font-size: 28px;
+  color: #5791a4;
+}

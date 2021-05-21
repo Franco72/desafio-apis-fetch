@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script async src="./index.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <form class="search-form">
+        <input
+          type="text"
+          name="product-to-search"
+          placeholder="Lavarropas..."
+        />
+        <button type="submit">Buscar</button>
+      </form>
+    </header>
+    <section class="section-of-products">
+      <div class="section-of-products-container">
+        <h2 class="results">Resultados: <span class="results-num"></span</h2>
+        <div class="container-of-products"></div>
+        <template id="template-product">
+          <a href="#" class="product-link" target="_blank">
+            <div class="product-container">
+              <div class="info-of-product-container">
+                <img
+                  src="https://picsum.photos/seed/picsum/400/400"
+                  alt="Lavarropas"
+                  class="img-product"
+                />
+                <div class="name-and-more-info-container">
+                  <h2 class="name-of-product">Nombre del producto</h2>
+                  <span class="product-condition">Nuevo</span>
+                  <span class="product-sold-quantity"></span>
+                </div>
+              </div>
+              <div class="price-of-product-container">
+                <h2 class="product-price">$1111</h2>
+              </div>
+            </div>
+          </a>
+        </template>
+      </div>
+    </section>
+  </body>
+</html>
