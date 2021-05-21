@@ -17,39 +17,29 @@ function copyTemplate(product, template) {
   //Cambiando el precio
   let templatePriceEl = template.content.querySelector(".product-price");
   templatePriceEl.textContent = `$${product.price}`;
-  //Cambiando el precio
+  //Cambiando el href del "a", para redirigir al producto de Mercadolibre
   let templateLinkEl = template.content.querySelector(".product-link");
   templateLinkEl.setAttribute("href", product.permalink);
   //Clonando el elemento
   let clone = document.importNode(template.content, true);
   return clone;
 }
-
 function createNewProduct(dataOfProduct) {
-  console.log(dataOfProduct);
   const results = document.querySelector(".results-num");
-  //cuando descomento esta línea, no me reconoce el template y la lista de productos, si esta linea está comentada, funciona, pero no puedo cambiar el resultado
-  // results.textContent = dataOfProduct.results.length;
+  results.textContent = dataOfProduct.results.length;
   const productList = document.querySelector(".container-of-products");
   const template = document.querySelector("#template-product");
-  // console.log(productList);
-  // console.log(template);
   dataOfProduct.results.forEach((product) => {
     const newProduct = copyTemplate(product, template);
     productList.appendChild(newProduct);
   });
 }
-
 function handleSubmit(event) {
   event.preventDefault();
-  const form = new FormData(event.target);
-  const value = Object.fromEntries(form.entries());
-  return value["product-to-search"];
+  return event.target["product-to-search"].value;
 }
-
 function searchProducts(event) {
   const productToSearch = handleSubmit(event);
-  console.log(productToSearch);
   fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${productToSearch}`)
     .then((res) => {
       return res.json();
@@ -65,10 +55,3 @@ function main() {
 }
 
 main();
-
-//Ejemplo
-// fetch("https://api.github.com/users/Franco72")
-// .then(function (res) {
-//   return res.json();
-// })
-// .then(function (json) {});

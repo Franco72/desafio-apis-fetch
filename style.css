@@ -42,6 +42,7 @@ button {
   font-size: 16px;
   padding: 13px 35px;
 }
+/* fin de header, comienza la sección de productos */
 .section-of-products {
   display: flex;
   flex-direction: column;
