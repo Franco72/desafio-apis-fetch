@@ -39,6 +39,11 @@ function handleSubmit(event) {
   return event.target["product-to-search"].value;
 }
 function searchProducts(event) {
+  //elimino los elementos que se buscaron antes(si es que hay), este proceso se hace antes de añadir los próximos elementos, apenas el user haga click en el botón se van a eliminar los elementos anteriores y después se añadirán los nuevos
+  const productList = document.querySelector(".container-of-products");
+  while (productList.firstChild) {
+    productList.removeChild(productList.firstChild);
+  }
   const productToSearch = handleSubmit(event);
   fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${productToSearch}`)
     .then((res) => {
